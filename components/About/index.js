@@ -13,7 +13,7 @@ export default function index({nightMode}) {
         <div className='flex flex-col items-center pt-[5rem] max-sm:pt-2'>
         <h2 className="text-4xl font-bold">About Me</h2>
         <p className="mb-10">Introductin</p>
-        <div className={`flex flex-col md:flex-row mx-10 gap-4 my-7`}>
+        <div className={`flex flex-col md:flex-row mx-10 gap-4 my-2`}>
           <div>
           <Card
             content={
@@ -38,7 +38,7 @@ export default function index({nightMode}) {
           />
         </div>
 
-        <div className="flex gap-6 mt-8 md:mt-[5rem] ">
+        <div className="flex gap-6 mt-8">
           <div className="flex flex-col items-center">
             <p
               className={`${

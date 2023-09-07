@@ -3,7 +3,7 @@ import Card from "./Card";
 
 export default function index({ nightMode }) {
   return (
-    <div className={`${nightMode && "bg-secondary"} sm:h-screen max-sm:h-[100%]`} id="qualification">
+    <div className={`${nightMode && "bg-secondary"} sm:h-screen max-sm:h-[100%] max-md:pt-10`} id="qualification">
       <div
         className={`pt-[5rem] flex flex-col items-center mb-16 max-sm:pt-3`}
         id="skills"

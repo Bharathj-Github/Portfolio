@@ -16,7 +16,7 @@ export default function index({ nightMode }) {
       id="home"
       className={`h-screen ${nightMode && "bg-secondary"}`}
     >
-      <div className="md:pt-[8rem] flex justify-evenly flex-col md:h-full">
+      <div className="md:pt-[5rem] flex justify-evenly flex-col md:h-full">
         <div className="flex flex-col-reverse justify-evenly max-md:h-[calc(100vh-100px)] md:flex-row">
           {/* scroll for mobile */}
           <div className="flex justify-center mt-7 md:hidden">
@@ -70,7 +70,7 @@ export default function index({ nightMode }) {
             </div>
           </div>
           {/* My Image */}
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center  saturate-[1.2]">
             <Image
               src={nightMode ? me_dark : me}
               alt="bharath"
@@ -79,7 +79,7 @@ export default function index({ nightMode }) {
           </div>
         </div>
         {/* scroll for pc */}
-        <div className="flex justify-center max-md:hidden mt-10">
+        <div className="flex justify-center max-md:hidden">
           <div className="animate-bounce">
             <Image
               src={nightMode ? mouse_dark : mouse}

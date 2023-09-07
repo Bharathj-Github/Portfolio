@@ -10,8 +10,8 @@ import g from "../img/g.svg";
 
 export default function index({ nightMode }) {
   return (
-    <div className={`${nightMode && 'bg-secondary'} pt-[6rem] sm:h-screen max-sm:h-[100%] max-sm:pt-5`} id="contact">
-      <div className={`flex flex-col items-center`} id="skills">
+    <div className={`${nightMode && 'bg-secondary'} pt-[6rem] sm:h-screen max-sm:h-[100%] max-sm:pt-10`} id="contact">
+      <div className={`flex flex-col items-center pb-8 max-sm:pb-0`} id="skills">
         <p className="text-4xl font-bold">Contact</p>
         <p>Contact Me</p>
       </div>
@@ -19,7 +19,7 @@ export default function index({ nightMode }) {
         <div className="flex justify-center mt-6">
         <Image src={me} alt={"me"} className="grayscale w-[80vh] h-full max-sm:w-[30vh]" />
         </div>
-        <div className={`flex justify-center items-center w-full ${nightMode && 'text-black'}`}>
+        <div className={`flex justify-center items-center w-full ${nightMode && 'text-black'} pb-5`}>
         <Form/>
         </div>
       </div>

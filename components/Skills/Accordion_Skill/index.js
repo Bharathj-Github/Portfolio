@@ -11,7 +11,7 @@ import Image from 'next/image';
 
 export default function BasicAccordion({nightMode}) {
   return (
-    <div className='flex flex-col gap-2 pt-10 lg:gap-4 '>
+    <div className='flex flex-col gap-2 pt-10 lg:gap-4'>
       <Accordion sx={{borderRadius:4}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon sx={{ color:'white'}} />}
@@ -19,7 +19,7 @@ export default function BasicAccordion({nightMode}) {
           id="panel1a-header"
           sx={{borderRadius:4, backgroundColor:"#5f22d9", fontWeight:'bold',color:'white'}}
           >
-         <div className='flex items-center gap-10 text-xl max-sm:gap-3 max-sm:text-sm '><Image src={key} alt='key' width={60} className='max-sm:w-10'/> KEY DOMAIN </div>
+         <div className='flex items-center gap-5 max-sm:gap-3 text-[1.1rem] max-sm:text-sm mx-10 max-sm:mx-5'><Image src={key} alt='key' width={50} className='max-sm:w-10'/> KEY DOMAIN </div>
         </AccordionSummary>
         <AccordionDetails>
           <div className='flex flex-col gap-2 py-2'>
@@ -47,7 +47,7 @@ export default function BasicAccordion({nightMode}) {
           id="panel2a-header"
           sx={{borderRadius:4, backgroundColor:"#5f22d9", fontWeight:'bold',color:'white'}}
         >
-          <div className='flex items-center gap-10 text-xl max-sm:gap-3 max-sm:text-sm'><Image src={front_end} alt='front_end' width={60} className='max-sm:w-10'/>FRONT-END TECHNOLOGIES</div>
+          <div className='flex items-center gap-5 max-sm:gap-3 text-[1.1rem] max-sm:text-sm mx-10 max-sm:mx-5'><Image src={front_end} alt='front_end' width={50} className='max-sm:w-10'/>FRONT-END TECHNOLOGIES</div>
         </AccordionSummary>
 
         <AccordionDetails>
@@ -77,7 +77,7 @@ export default function BasicAccordion({nightMode}) {
           id="panel3a-header"
           sx={{borderRadius:4, backgroundColor:"#5f22d9", fontWeight:'bold',color:'white'}}
         >
-          <div className='flex items-center gap-10 text-xl max-sm:gap-3 max-sm:text-sm'><Image src={back_end} alt='back_end' width={60} className='max-sm:w-10'/>BACK-END TECHNOLOGIES</div>
+          <div className='flex items-center gap-5 max-sm:gap-3 text-[1.1rem] max-sm:text-sm mx-10 max-sm:mx-5'><Image src={back_end} alt='back_end' width={50} className='max-sm:w-10'/>BACK-END TECHNOLOGIES</div>
         </AccordionSummary>
 
         <AccordionDetails>
