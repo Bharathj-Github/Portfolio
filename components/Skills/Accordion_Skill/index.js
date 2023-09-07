@@ -12,17 +12,15 @@ import Image from 'next/image';
 export default function BasicAccordion({nightMode}) {
   return (
     <div className='flex flex-col gap-2 pt-10 lg:gap-4 '>
-      <Accordion className='rounded-b-2xl'>
-        <div className="bg-primary text-white font-bold rounded-2xl">
+      <Accordion sx={{borderRadius:4}}>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon className='text-white' />}
+          expandIcon={<ExpandMoreIcon sx={{ color:'white'}} />}
           aria-controls="panel1a-content"
           id="panel1a-header"
-          className={``}
+          sx={{borderRadius:4, backgroundColor:"#5f22d9", fontWeight:'bold',color:'white'}}
           >
          <div className='flex items-center gap-10 text-xl max-sm:gap-3 max-sm:text-sm '><Image src={key} alt='key' width={60} className='max-sm:w-10'/> KEY DOMAIN </div>
         </AccordionSummary>
-          </div>
         <AccordionDetails>
           <div className='flex flex-col gap-2 py-2'>
             <div className='flex'><p>Domain :&nbsp;</p><p className='text-primary font-extrabold'>MAINFRAME</p></div>
@@ -39,16 +37,19 @@ export default function BasicAccordion({nightMode}) {
           </div>
         </AccordionDetails>
       </Accordion>
-      <Accordion className='rounded-2xl'>
-      <div className="bg-primary text-white font-bold rounded-2xl">
+
+
+      <Accordion sx={{borderRadius:4}}>
+
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon className='text-white'/>}
+          expandIcon={<ExpandMoreIcon sx={{ color:'white'}} />}
           aria-controls="panel2a-content"
           id="panel2a-header"
+          sx={{borderRadius:4, backgroundColor:"#5f22d9", fontWeight:'bold',color:'white'}}
         >
           <div className='flex items-center gap-10 text-xl max-sm:gap-3 max-sm:text-sm'><Image src={front_end} alt='front_end' width={60} className='max-sm:w-10'/>FRONT-END TECHNOLOGIES</div>
         </AccordionSummary>
-        </div>
+
         <AccordionDetails>
           <div className='flex flex-col gap-2 py-2'>
             <p>Skills :&nbsp;</p>
@@ -66,16 +67,19 @@ export default function BasicAccordion({nightMode}) {
           </div>
         </AccordionDetails>
       </Accordion>
-      <Accordion className='rounded-2xl'>
-      <div className="bg-primary text-white font-bold rounded-2xl">
+
+
+      <Accordion sx={{borderRadius:4}}>
+
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon className='text-white'/>}
+          expandIcon={<ExpandMoreIcon sx={{ color:'white'}} />}
           aria-controls="panel3a-content"
           id="panel3a-header"
+          sx={{borderRadius:4, backgroundColor:"#5f22d9", fontWeight:'bold',color:'white'}}
         >
           <div className='flex items-center gap-10 text-xl max-sm:gap-3 max-sm:text-sm'><Image src={back_end} alt='back_end' width={60} className='max-sm:w-10'/>BACK-END TECHNOLOGIES</div>
         </AccordionSummary>
-        </div>
+
         <AccordionDetails>
           <div className='flex flex-col gap-2 py-2'>
             <p>Skills :&nbsp;</p>
