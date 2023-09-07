@@ -13,14 +13,16 @@ export default function BasicAccordion({nightMode}) {
   return (
     <div className='flex flex-col gap-2 pt-10 lg:gap-4 '>
       <Accordion className='rounded-b-2xl'>
+        <div className="bg-primary text-white font-bold rounded-2xl">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon className='text-white' />}
           aria-controls="panel1a-content"
           id="panel1a-header"
-          className={`bg-primary text-white font-bold rounded-2xl`}
-        >
-         <div className='flex items-center gap-10 text-xl max-sm:gap-3 max-sm:text-sm'><Image src={key} alt='key' width={60} className='max-sm:w-10'/> KEY DOMAIN </div>
+          className={``}
+          >
+         <div className='flex items-center gap-10 text-xl max-sm:gap-3 max-sm:text-sm '><Image src={key} alt='key' width={60} className='max-sm:w-10'/> KEY DOMAIN </div>
         </AccordionSummary>
+          </div>
         <AccordionDetails>
           <div className='flex flex-col gap-2 py-2'>
             <div className='flex'><p>Domain :&nbsp;</p><p className='text-primary font-extrabold'>MAINFRAME</p></div>
@@ -38,14 +40,15 @@ export default function BasicAccordion({nightMode}) {
         </AccordionDetails>
       </Accordion>
       <Accordion className='rounded-2xl'>
+      <div className="bg-primary text-white font-bold rounded-2xl">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon className='text-white'/>}
           aria-controls="panel2a-content"
           id="panel2a-header"
-          className={`${nightMode ? 'bg-primary' : 'bg-primary'} text-white font-bold rounded-2xl`}
         >
           <div className='flex items-center gap-10 text-xl max-sm:gap-3 max-sm:text-sm'><Image src={front_end} alt='front_end' width={60} className='max-sm:w-10'/>FRONT-END TECHNOLOGIES</div>
         </AccordionSummary>
+        </div>
         <AccordionDetails>
           <div className='flex flex-col gap-2 py-2'>
             <p>Skills :&nbsp;</p>
@@ -64,14 +67,15 @@ export default function BasicAccordion({nightMode}) {
         </AccordionDetails>
       </Accordion>
       <Accordion className='rounded-2xl'>
+      <div className="bg-primary text-white font-bold rounded-2xl">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon className='text-white'/>}
           aria-controls="panel3a-content"
           id="panel3a-header"
-          className={`${nightMode ? 'bg-primary' : 'bg-primary'} text-white font-bold rounded-2xl`}
         >
           <div className='flex items-center gap-10 text-xl max-sm:gap-3 max-sm:text-sm'><Image src={back_end} alt='back_end' width={60} className='max-sm:w-10'/>BACK-END TECHNOLOGIES</div>
         </AccordionSummary>
+        </div>
         <AccordionDetails>
           <div className='flex flex-col gap-2 py-2'>
             <p>Skills :&nbsp;</p>
