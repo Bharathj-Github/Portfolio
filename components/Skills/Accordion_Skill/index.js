@@ -17,7 +17,7 @@ export default function BasicAccordion({nightMode}) {
           expandIcon={<ExpandMoreIcon className='text-white' />}
           aria-controls="panel1a-content"
           id="panel1a-header"
-          className={`${nightMode ? 'bg-primary' : 'bg-primary'} text-white font-bold rounded-2xl`}
+          className={`bg-primary text-white font-bold rounded-2xl`}
         >
          <div className='flex items-center gap-10 text-xl max-sm:gap-3 max-sm:text-sm'><Image src={key} alt='key' width={60} className='max-sm:w-10'/> KEY DOMAIN </div>
         </AccordionSummary>
