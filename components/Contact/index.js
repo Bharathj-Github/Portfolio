@@ -15,7 +15,7 @@ export default function index({ nightMode }) {
         <p className="text-4xl font-bold">Contact</p>
         <p>Contact Me</p>
       </div>
-      <div className="flex max-sm:block bg-secondary">
+      <div className={`flex max-sm:block ${nightMode && 'text-black'} `}>
         <div className="flex justify-center mt-6">
         <Image src={me} alt={"me"} className="grayscale w-[80vh] h-full max-sm:w-[30vh]" />
         </div>
