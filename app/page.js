@@ -8,13 +8,22 @@ import Skills from '../components/Skills';
 import Qualification from '../components/Qualification';
 import Portfolio from '../components/Portfolio';
 import Contact from "../components/Contact";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 export default function Home() {
   const [nightMode, setNightMode] = useState(false);
   const nightHandler = (data) => {
     setNightMode(data);
   };
+
+  const theme = createTheme({
+    typography: {
+      fontFamily: ["Poppins"].join(","),
+    },
+  });
+
   return (
+    <ThemeProvider theme={theme}>
     <div
       className={`scroll-smooth overflow-x-hidden${
         nightMode ? "bg-purple-heart  text-white" : "bg-white"
@@ -37,5 +46,6 @@ export default function Home() {
       {/* Contact */}
       <Contact nightMode={nightMode}/>
     </div>
+    </ThemeProvider>
   );
 }

@@ -51,10 +51,10 @@ export default function SwipeableTemporaryDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List className='grid grid-cols-2 gap-2 mx-4 font-[Poppins]'>
+      <List className='grid grid-cols-2 gap-5 mx-4 py-10'>
         {['home', 'about', 'skills', 'qualification','portfolio','contact'].map((text, index) => (
           <ListItem key={text} disablePadding >
-            <ListItemButton className='bg-primary text-white font-bold rounded-full' >
+            <ListItemButton sx={{backgroundColor:'#5f22d9',borderRadius:10,color:'white',fontFamily:'Poppins'}} >
               <ListItemIcon>
                 {text =="home" && <Image src={home} alt={text} width={35} height={30}></Image>}
                 {text == "about" && <Image src={about} alt={text} width={35} height={30}></Image>}
