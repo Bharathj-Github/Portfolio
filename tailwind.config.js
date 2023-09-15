@@ -17,6 +17,12 @@ module.exports = {
         'secondary':'#1a1525',
         'secondary_l':'#9285f4'
       },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'translateX(10px)' },
+          '50%': { transform: 'translateX(-10px)' },
+        }
+      },
     },
   },
   plugins: [],

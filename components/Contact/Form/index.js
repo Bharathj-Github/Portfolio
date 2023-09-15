@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Input from "./Input";
 import Image from "next/image";
 import send from "../../img/send_2.svg";
@@ -11,8 +11,8 @@ import "react-toastify/dist/ReactToastify.css";
 export default function Index() {
   const showToastMessage = () => {
     toast.success('Message sent', {
-      position: "bottom-right",
-      autoClose: 5000,
+      position: "top-right",
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -21,46 +21,62 @@ export default function Index() {
       theme: "light",
       });
   };
+  const userRef = useRef();
+  const [errorMsg, setErrorMsg] = useState("");
+  const [first, setFirst] = useState(true);
+  const [last,setLast] = useState(true);
+  const [email, setEmail] = useState(true);
+  const [msg, setMsg] = useState(true);
+  const [clicked, setClicked] = useState();
+  const [disable, setDisable] = useState(false)
   const [userData, setUserData] = useState({
     firstName: "",
     lastName: "",
     emailId: "",
     message: "",
   });
-  const userRef = useRef();
-  const [errorMsg, setErrorMsg] = useState("");
   const submitHandler = (event) => {
     event.preventDefault();
-    let first = validator.firstNameValidater(userData.firstName);
-    let last = validator.lastNameValidater(userData.lastName);
-    let email = validator.emailIdValidator(userData.emailId);
-    let msg = validator.messageValidater(userData.message);
+    setFirst(validator.firstNameValidater(userData.firstName));
+      setLast(validator.lastNameValidater(userData.lastName));
+      setEmail(validator.emailIdValidator(userData.emailId));
+      setMsg(validator.messageValidater(userData.message));
+      setClicked(true);
+  }
 
-    if (!first) {
-      setErrorMsg("First Name Is Required!!");
-    }
-    if (first && !last) {
-      setErrorMsg("Last Name Is Required!!");
-    }
-    if (first && last && !email) {
-      setErrorMsg("Invalid Email Id!!");
-    }
-    if (first && last && email && !msg) {
-      setErrorMsg("Message Is Required!!");
-    }
-    if (first && last && email && msg) {
-      axios
+  useEffect(()=>{
+    if(clicked){
+
+      if (!first) {
+        setErrorMsg("First Name Is Required!!");
+      }
+      if (first && !last) {
+        setErrorMsg("Last Name Is Required!!");
+      }
+      if (first && last && !email) {
+        setErrorMsg("Invalid Email Id!!");
+      }
+      if (first && last && email && !msg) {
+        setErrorMsg("Message Is Required!!");
+      } 
+      if (first && last && email && msg && clicked) {
+        setDisable(true)
+        axios
         .post("https://node-portfolio-26x9.onrender.com", userData)
         .then(() => {
-          setErrorMsg("")
+          setUserData(" ")
+          showToastMessage();
+          setErrorMsg("");
           userRef.current?.reset();
-          showToastMessage()
         })
         .catch((err) => {
           console.log(err);
         });
+      };
     }
-  };
+
+    },[first,last,email,msg,clicked])
+    
   const firstHandler = (data) => {
     setUserData({ ...userData, firstName: data });
   };
@@ -99,15 +115,15 @@ export default function Index() {
         ref={userRef}
       >
         <div className="md:flex gap-4">
-          <Input name={"First Name *"} handler={firstHandler} />
-          <Input name={"Last Name *"} handler={lastHandler} />
+          <Input name={"First Name *"} handler={firstHandler} err={!first}/>
+          <Input name={"Last Name *"} handler={lastHandler} err={!last}/>
         </div>
-        <Input name={"Email Id *"} handler={emailHandler} />
+        <Input name={"Email Id *"} handler={emailHandler} err={!email}/>
         <div>
-          <div>Message *</div>
+          <div className={!msg && 'text-red-600'}>Message *</div>
           <textarea
             name="message"
-            className="border-2 border-primary rounded-t-2xl rounded-l-2xl w-full max-sm:h-[7rem] p-3"
+            className={`border-2 border-primary rounded-t-2xl rounded-l-2xl w-full max-sm:h-[7rem] p-3 ${!msg && 'border-red-600 animate-[wiggle_0.2s_2]'}`}
             onChange={messageHandler}
           ></textarea>
         </div>
@@ -116,8 +132,9 @@ export default function Index() {
         </div>
         <button
           type="submit"
-          className="flex bg-primary rounded-2xl text-white font-bold w-full justify-center 
-            py-2 gap-3 items-center text-lg"
+          className={`flex bg-primary rounded-2xl text-white font-bold w-full justify-center 
+            py-2 gap-3 items-center text-lg ${disable && 'bg-gray-400'}`}
+            disabled={disable}
         >
           Send{" "}
           <Image src={send} alt="send" className="max-sm:w-10 w-[2.5rem]" />
