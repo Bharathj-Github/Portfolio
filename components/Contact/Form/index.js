@@ -49,7 +49,6 @@ export default function Index() {
       setErrorMsg("Message Is Required!!");
     }
     if (first && last && email && msg) {
-      setErrorMsg("");
       axios
         .post("https://node-portfolio-26x9.onrender.com", userData)
         .then(() => {
