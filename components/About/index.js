@@ -12,7 +12,7 @@ export default function index({nightMode}) {
       <div className={` ${nightMode && 'bg-secondary'} h-[100%]`} id="about">
         <div className='flex flex-col items-center pt-[5rem] max-sm:pt-2'>
         <h2 className="text-4xl font-bold">About Me</h2>
-        <p className="mb-10">Introductin</p>
+        <p className="mb-10">Introduction</p>
         <div className={`flex flex-col md:flex-row mx-10 gap-4 my-2`}>
           <div>
           <Card

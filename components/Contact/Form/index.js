@@ -2,13 +2,23 @@ import React, { useEffect, useRef, useState } from "react";
 import Input from "./Input";
 import Image from "next/image";
 import send from "../../img/send_2.svg";
-import { Paper } from "@mui/material";
+import { Hidden, Paper } from "@mui/material";
 import validator from "./Validator";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Lottie from 'react-lottie';
+import done from '../../img/ok.json'
 
-export default function Index() {
+export default function Index({nightMode}) {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: done,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }}
+
   const showToastMessage = () => {
     toast.success('Message sent', {
       position: "top-right",
@@ -60,10 +70,10 @@ export default function Index() {
         setErrorMsg("Message Is Required!!");
       } 
       if (first && last && email && msg && clicked) {
-        setDisable(true)
         axios
         .post("https://node-portfolio-26x9.onrender.com", userData)
         .then(() => {
+          setDisable(true)
           setUserData(" ")
           showToastMessage();
           setErrorMsg("");
@@ -110,7 +120,7 @@ export default function Index() {
       </div>
       <form
         action=""
-        className="flex flex-col gap-3"
+        className={`flex flex-col gap-3 ${disable && 'hidden'}`}
         onSubmit={submitHandler}
         ref={userRef}
       >
@@ -133,13 +143,23 @@ export default function Index() {
         <button
           type="submit"
           className={`flex bg-primary rounded-2xl text-white font-bold w-full justify-center 
-            py-2 gap-3 items-center text-lg ${disable && 'bg-gray-400'}`}
-            disabled={disable}
-        >
+            py-2 gap-3 items-center text-lg ${disable && 'bg-gray-400'}`}>
           Send{" "}
           <Image src={send} alt="send" className="max-sm:w-10 w-[2.5rem]" />
         </button>
       </form>
+      <div className={`${!disable && 'hidden'}`}>
+        <div className={''}>
+        <Lottie 
+	    options={defaultOptions}
+        height={50}
+        width={50}
+      />
+        </div>
+        <div className="pt-5">
+        I Will Get Back To You As Soon As Possible
+        </div>
+      </div>
     </Paper>
   );
 }

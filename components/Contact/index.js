@@ -20,7 +20,7 @@ export default function index({ nightMode }) {
         <Image src={me} alt={"me"} className="grayscale w-[80vh]  max-md:w-[45vh]" />
         </div>
         <div className={`flex justify-center items-center w-full ${nightMode && 'text-black'} pb-5`}>
-        <Form/>
+        <Form nightMode={nightMode}/>
         </div>
       </div>
       <div className="bg-primary h-[5rem] flex items-center justify-evenly max-md:mb-10">
