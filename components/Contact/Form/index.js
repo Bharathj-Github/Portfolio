@@ -51,7 +51,7 @@ export default function Index() {
     if (first && last && email && msg) {
       setErrorMsg("");
       axios
-        .post("http://localhost:4000/", userData)
+        .post("https://node-portfolio-26x9.onrender.com", userData)
         .then(() => {
           setErrorMsg("")
           userRef.current?.reset();
