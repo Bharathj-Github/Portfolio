@@ -7,17 +7,10 @@ import validator from "./Validator";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Lottie from 'react-lottie';
+import Lottie from "lottie-react";
 import done from '../../img/ok.json'
 
 export default function Index({nightMode}) {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: done,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice"
-    }}
 
   const showToastMessage = () => {
     toast.success('Message sent', {
@@ -149,11 +142,10 @@ export default function Index({nightMode}) {
         </button>
       </form>
       <div className={`${!disable && 'hidden'}`}>
-        <div className={''}>
+        <div className={'h-[10rem]'}>
         <Lottie 
-	    options={defaultOptions}
-        height={50}
-        width={50}
+        className="scale-50 -translate-y-[5rem]"
+	    animationData={done} loop={true}
       />
         </div>
         <div className="pt-5">
