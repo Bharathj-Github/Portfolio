@@ -16,8 +16,8 @@ export default function index({ nightMode }) {
         <p>Contact Me</p>
       </div>
       <div className={`flex max-md:block ${nightMode && 'text-black'} `}>
-        <div className="flex justify-center ">
-        <Image src={me} alt={"me"} className="grayscale w-[80vh] h-full max-md:w-[45vh]" />
+        <div className="flex justify-center md:pt-10 ">
+        <Image src={me} alt={"me"} className="grayscale w-[80vh]  max-md:w-[45vh]" />
         </div>
         <div className={`flex justify-center items-center w-full ${nightMode && 'text-black'} pb-5`}>
         <Form/>
