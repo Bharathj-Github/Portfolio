@@ -9,7 +9,7 @@ import future_l from "../img/rocket_l.svg";
 
 export default function index({nightMode}) {
   return (
-      <div className={` ${nightMode && 'bg-secondary'} sm:h-screen max-sm:h-[100%]`} id="about">
+      <div className={` ${nightMode && 'bg-secondary'} h-[100%]`} id="about">
         <div className='flex flex-col items-center pt-[5rem] max-sm:pt-2'>
         <h2 className="text-4xl font-bold">About Me</h2>
         <p className="mb-10">Introductin</p>

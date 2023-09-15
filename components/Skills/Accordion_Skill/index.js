@@ -11,8 +11,8 @@ import Image from 'next/image';
 
 export default function BasicAccordion({nightMode}) {
   return (
-    <div className='flex flex-col gap-2 pt-10 lg:gap-4'>
-      <Accordion sx={{borderRadius:4}}>
+    <div className='flex flex-col gap-2 pt-5 lg:gap-4 mx-[10%]'>
+      <Accordion sx={{borderRadius:4}} hidden>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon sx={{ color:'white'}} />}
           aria-controls="panel1a-content"
@@ -21,7 +21,7 @@ export default function BasicAccordion({nightMode}) {
           >
          <div className='flex items-center gap-5 max-sm:gap-3 text-[1.1rem] max-sm:text-sm mx-10 max-sm:mx-5'><Image src={key} alt='key' width={50} className='max-sm:w-10'/> KEY DOMAIN </div>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails >
           <div className='flex flex-col gap-2 py-2'>
             <div className='flex'><p>Domain :&nbsp;</p><p className='text-primary font-extrabold'>MAINFRAME</p></div>
             <p>Technical :&nbsp;</p>
@@ -53,7 +53,7 @@ export default function BasicAccordion({nightMode}) {
         <AccordionDetails>
           <div className='flex flex-col gap-2 py-2'>
             <p>Skills :&nbsp;</p>
-            <div className='flex gap-4 max-sm:grid max-sm:grid-cols-2'>
+            <div className='grid gap-2 grid-cols-3 max-sm:grid-cols-2'>
             <Box name={'React JS'} nightMode={nightMode}/>
             <Box name={'Next JS'} nightMode={nightMode}/>
             <Box name={'Redux'} nightMode={nightMode}/>

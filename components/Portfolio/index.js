@@ -10,8 +10,8 @@ export default function Index({ nightMode }) {
   const css_onFocus = "absolute rounded-3xl -translate-y-6 max-sm:scale-[1.7]";
 
   return (
-    <div className={nightMode ? "bg-secondary" : "bg-white" + "w-screen "} id="portfolio">
-      <div className={`pt-[5rem] flex flex-col items-center `} id="skills">
+    <div className={nightMode ? "bg-secondary" : "bg-white" + "w-screen h-[100%] max-md:pb-[5rem]"} id="portfolio">
+      <div className={`pt-[5rem] flex flex-col items-center`} id="skills">
         <p className="text-4xl font-bold">Portfolio</p>
         <p>My Projects</p>
       </div>

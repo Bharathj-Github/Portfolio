@@ -22,6 +22,8 @@ export default function index({nightMode}) {
         <AccordionDetails>
 
             <div className='flex gap-5 flex-col py-2'>
+            <Box name={'Infosys Certified NodeJS Professional'} nightMode={nightMode}/>
+            <Box name={'Infosys Certified Node Developer'} nightMode={nightMode}/>
             <Box name={'Course Certification On Node.JS'} nightMode={nightMode}/>
             <Box name={'Course Certification On Express.JS'} nightMode={nightMode}/>
             <Box name={'Course Certification On MongoDB Developer'} nightMode={nightMode}/>

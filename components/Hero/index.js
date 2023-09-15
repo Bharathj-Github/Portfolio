@@ -18,7 +18,7 @@ export default function index({ nightMode }) {
     >
       <div className="md:pt-[5rem] flex justify-evenly flex-col md:h-full">
         <div className="flex flex-col-reverse justify-evenly max-md:h-[calc(100vh-100px)] md:flex-row">
-          {/* scroll for mobile */}
+          {/* scroll icon for mobile */}
           <div className="flex justify-center mt-7 md:hidden">
             <div className="animate-bounce">
               <Image
@@ -31,8 +31,8 @@ export default function index({ nightMode }) {
           {/* text  */}
           <div className="flex flex-col justify-evenly">
             {/* text  */}
-            <div className="flex flex-col justify-center max-sm:px-9 ">
-              <div className="text-5xl font-bold max-md:mt-6 md:text-7xl lg:pt-10">
+            <div className="flex flex-col justify-center max-lg:px-9 ">
+              <div className="text-5xl font-bold max-md:mt-6 lg:text-7xl">
                 <h2>Hello,</h2>
                 <h2 className="pt-4">
                   I&apos;m&nbsp;
@@ -53,7 +53,7 @@ export default function index({ nightMode }) {
               </p>
             </div>
             {/* Contact button */}
-            <div className="flex max-sm:justify-center mt-5">
+            <div className="flex max-lg:justify-center mt-5">
               <Link
                 href="#contact"
                 className={`rounded-full capitalize  bg-[#ffffff] text-lg font-bold flex gap-3 py-1 hover:shadow-xl px-5 ${
@@ -78,7 +78,7 @@ export default function index({ nightMode }) {
             />
           </div>
         </div>
-        {/* scroll for pc */}
+        {/* scroll icon for pc */}
         <div className="flex justify-center max-md:hidden">
           <div className="animate-bounce">
             <Image

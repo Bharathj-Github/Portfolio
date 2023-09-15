@@ -3,7 +3,7 @@ import Card from "./Card";
 
 export default function index({ nightMode }) {
   return (
-    <div className={`${nightMode && "bg-secondary"} sm:h-screen max-sm:h-[100%] max-md:pt-10`} id="qualification">
+    <div className={`${nightMode && "bg-secondary"} h-[100%] max-md:pt-10`} id="qualification">
       <div
         className={`pt-[5rem] flex flex-col items-center mb-16 max-sm:pt-3`}
         id="skills"
@@ -11,7 +11,7 @@ export default function index({ nightMode }) {
         <p className="text-4xl font-bold">Qualification</p>
         <p>My Academics</p>
       </div>
-      <div className="grid grid-flow-col gap-5 mx-14 max-sm:grid-flow-row">
+      <div className="grid grid-flow-col gap-5 mx-14 max-lg:grid-flow-row">
         <Card
           name={"Secondary School Leaving Certificate - SSLC"}
           university={"Secondary Education Examination Bord"}
@@ -24,7 +24,7 @@ export default function index({ nightMode }) {
           name={"Diploma"}
           university={"Visvesvaraya Technological University"}
           institute={"Jss polytechnic mysore"}
-          pass={"15 may 2019"}
+          pass={"15 May 2019"}
           branch={"Mechatronics Engineering"}
           nightMode={nightMode}
         />
